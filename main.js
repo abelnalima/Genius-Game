@@ -51,3 +51,45 @@ let lightColor = (element, number) => {
         element.classList.remove('selected');
     }, number + 50);
 }
+
+//Verifica se a ordem que foi pressionada coincide com a ordem das luzes
+let checkOrder = () => {
+    for(let i in clickedOrder) {
+        if (clickedOrder[i] != order[i]) {
+            gameOver(); break;
+        }
+    }
+
+    if (clickedOrder.length == order.length) {
+        alert('Score: ' +score +'\nVocê acertou! Iniciando próximo nível!');
+        nextLevel();
+    }
+}
+
+//Computa a pontuação e procede com a próxima sequência
+let nextLevel = () => {
+    score++;
+
+    shuffleOrder();
+}
+
+//Encerra a partida e reseta a ordem das cores e dos clicks
+let gameOver = () => {
+    alert('Score: ' +score +'!\nVocê perdeu o jogo!\n Clique em OK para reiniciar a partida!');
+    
+    order = [];
+    clickedOrder = [];
+
+    playGame();
+}
+
+//Ilumina a cor quando pressionada pelo jogador
+let click = (color) => {
+    clickedOrder[clickedOrder.length] = color;
+    createColorElement(color).classList.add('selected');
+
+    setTimeout(() => {
+        createColorElement(color).classList.remove('selected');
+        checkOrder();
+    }, 250);
+}
