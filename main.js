@@ -93,3 +93,21 @@ let click = (color) => {
         checkOrder();
     }, 250);
 }
+
+//Incia a partida e reseta a pontuação do jogador
+let playGame = () => {
+    alert('Bem Vindo ao Genius! Iniciando novo jogo!');
+    
+    score = 0;
+
+    nextLevel();
+}
+
+//Adiciona a cor clicada ao pressionar
+green.onclick = () => click(0);
+red.onclick = () => click(1);
+yellow.onclick = () => click(2);
+blue.onclick = () => click(3);
+
+//Inicia o jogo ao carregar a página
+playGame();
