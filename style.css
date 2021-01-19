@@ -18,11 +18,11 @@ body {
     
     column-gap: 10px;/*Espaço entre cada conteiner do grid*/
     row-gap: 10px;/*Espaço entre cada conteiner do grid*/
-    border: 1px solid #ffffff;
+    border: 10px solid #000;
     border-radius: 100%;
-    background: #ffffff;
-    width: 700px;
-    height: 700px;
+    background: #000;
+    width: 650px;
+    height: 650px;
 }
 
 .blue {
@@ -50,5 +50,5 @@ body {
 }
 
 .selected {
-    opacity: 0.8;
+    opacity: 0.6;
 }
