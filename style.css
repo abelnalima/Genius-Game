@@ -13,14 +13,42 @@ body {
 
 .genius {
     display: grid;
-    grid-template-areas: 'blue yellow'
-    'red green'; /*Nome para cada um dos conteiners do grid*/
+    grid-template-areas: 'gridGreen gridRed'
+    'gridYellow gridBlue'; /*Nome para cada um dos conteiners do grid*/
     
-    column-gap: 20px;
-    row-gap: 20px;/*Espaço entre cada conteiner do grid*/
+    column-gap: 10px;/*Espaço entre cada conteiner do grid*/
+    row-gap: 10px;/*Espaço entre cada conteiner do grid*/
     border: 1px solid #ffffff;
     border-radius: 100%;
     background: #ffffff;
     width: 700px;
     height: 700px;
+}
+
+.blue {
+    grid-area: gridBlue;
+    background: blue;
+    border-bottom-right-radius: 100%;
+}
+
+.red {
+    grid-area: gridRed;
+    background: red;
+    border-top-right-radius: 100%;
+}
+
+.yellow {
+    grid-area: gridYellow;
+    background: yellow;
+    border-bottom-left-radius: 100%;
+}
+
+.green {
+    grid-area: gridGreen;
+    background: green;
+    border-top-left-radius: 100%;
+}
+
+.selected {
+    opacity: 0.8;
 }
